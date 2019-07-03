@@ -1,0 +1,12 @@
+<h1>Please add a new student below:</h1>
+
+<%= form_for(@student_path) do |f| %>
+  <p><%= f.label :first_name %>
+  <%= f.text_field :first_name %></p>
+
+  <p><%= f.label :last_name %>
+  <%= f.text_field :last_name %></p>
+
+  <%= f.submit %>
+
+  <% end %>
