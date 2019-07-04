@@ -1,5 +1,3 @@
-require 'pry'
-
 class StudentsController < ApplicationController
 
   def index
@@ -25,7 +23,8 @@ class StudentsController < ApplicationController
 
   def update
     @student = Student.find(params[:id])
-    @student = Student.update(params.require(:student).permit(:first_name, :last_name))
+    @student.update(params.require(:student).permit(:first_name, :last_name))
+    redirect_to student_path(@student)
   end
 
 end
