@@ -4,3 +4,4 @@ FactoryBot.define do
     room_number 5
   end
 end
+
