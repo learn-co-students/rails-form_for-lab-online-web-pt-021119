@@ -1,30 +1,31 @@
-class StudentsClassesController < ActiveController
+class SchoolClassesController < ApplicationController
 
     def index 
-        @school_classes = School_Class.all
-    end 
-
-    def show
-        @school_class = School_Class.find(parans[:id])
+        @school_class= SchoolClass.all
     end 
 
     def new 
-        @school_class = School_Class.new
+        @school_class = SchoolClass.new
+    end 
+    
+    def show
+        @school_class = SchoolClass.find(parans[:id])
     end 
 
+
     def create 
-        @school_class = School_Class.new(post_params(:title, :room_number))
+        @school_class = SchoolClass.new(post_params(:title, :room_number))
         @school_class.save
         redirect_to school_class_path(@school_class)
     end 
 
     def update
-        @school_class = School_Class.find(params[:id])
-        @schooL_class.update(post_params(*args)
+        @school_class = SchoolClass.find(params[:id])
+        @schooL_class.update(post_params(*args))
     end 
 
     def edit 
-        @school_class = School_Class.find(params[:id])
+        @school_class = SchoolClass.find(params[:id])
     end 
 
 

@@ -1,4 +1,4 @@
-class StudentsController < ActiveController
+class StudentsController < ApplicationController
 
     def index 
         @students = Student.all
@@ -20,7 +20,7 @@ class StudentsController < ActiveController
 
     def update
         @student = Student.find(params[:id])
-        @student.update(post_params(*args)
+        @student.update(post_params(*args))
     end 
 
     def edit 
